@@ -1,0 +1,6 @@
+rich
+pandas
+pyinstaller
+streamlit
+plotly
+

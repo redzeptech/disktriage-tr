@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "disktriage-tr"
+version = "1.0.0"
+description = "Adli bilişim ön inceleme (forensic triage) aracı"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+authors = [{name = "DiskTriage TR"}]
+keywords = ["forensics", "triage", "disk-analysis", "windows-artifacts"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security",
+]
+dependencies = [
+    "rich",
+    "pandas",
+    "streamlit",
+    "plotly",
+]
+
+[project.optional-dependencies]
+build = ["pyinstaller"]
+dev = ["pytest", "pytest-cov"]
+
+[project.scripts]
+disktriage = "disktriage.cli:main"
+
+[project.urls]
+Repository = "https://github.com/example/disktriage-tr"
+
+[tool.setuptools.packages.find]
+include = ["disktriage*"]
